@@ -1,0 +1,22 @@
+[package]
+name = "example"
+version = "0.1.0"
+authors = ["suve <veg@svgames.pl>"]
+edition = "2018"
+
+[[bin]]
+name = "rpn"
+path = "src/main.rs"
+
+[lib]
+name = "rpn"
+path = "src/lib.rs"
+crate-type = ["cdylib", "lib"]
+
+[dependencies]
+rust-gmp = "~0.5.0"
+thiserror = "~1.0.24"
+
+[target.'cfg(target_os = "android")'.dependencies]
+anyhow = "~1.0.38"
+jni = "0.19.0"
